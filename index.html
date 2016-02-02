@@ -206,22 +206,20 @@ glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
 var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
 
 function waitForElement(selector, time, index, content, element) {
-	var i = index == null? 0: index,
-	el = element == null? "innerText": element;
-
+	var i = index == null? 0: index;
         if(document.querySelectorAll(selector).length!==0) {
-	    document.querySelectorAll(selector)[i][el]=content;
+	    document.querySelectorAll(selector)[i][element]=content;
             return;
         }
         else {
             setTimeout(function() {
-                waitForElement(selector, time, index, content);
+                waitForElement(selector, time, index, content, element);
             }, time);
         }
     }
-waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?");
+waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");
 waitForElement("#cd_prechat_button", 1000, null, "Iniciar Chat","value");
-waitForElement(".cdw-chat-popup-white-label", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito");
+waitForElement(".cdw-chat-popup-white-label", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito","innerText");
 
 
 </script>
