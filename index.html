@@ -205,9 +205,9 @@ var glcspt = document.createElement('script'); glcspt.type = 'text/javascript';
 glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
 var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
 
-function waitForElementToDisplay(selector, time) {
-        if(document.querySelector(selector)!=null) {document.getElementById("cd_agent_name").innerText="Quer Ajuda?";
-            //alert("The element is displayed, you can put your code instead of this alert.")
+function waitForElement(selector, time, content) {
+        if(document.querySelectorAll(selector)!=null) {
+	    document.querySelectorAll(selector).innerText=content;
             return;
         }
         else {
@@ -216,12 +216,8 @@ function waitForElementToDisplay(selector, time) {
             }, time);
         }
     }
-waitForElementToDisplay("#cd_agent_name", 1000);
-//var d = document.getElementById("cd_agent_name");
-//while(d == null) {d = document.getElementById("cd_agent_name");
-if(document.getElementById("cd_agent_name"))
-document.getElementById("cd_agent_name").innerText="Quer Ajuda?";
-//}
+waitForElement("#cd_agent_name", 1000, "Quer Ajuda?");
+
 </script>
 <!-- End of ClickDesk -->
     <script type="text/javascript" src="js/jquery.js"></script>
