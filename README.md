@@ -1,0 +1,3 @@
+# namorarlindo
+Namorar e Lindo ser fiel perfeito
+...
