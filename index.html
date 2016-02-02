@@ -222,7 +222,8 @@ waitForElement("#cd_prechat_button", 1000, null, "Iniciar Chat","value");
 waitForElement(".cdw-chat-popup-white-label", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito","innerText");
 waitForElement("#cd_agent_image", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito","title");
 waitForElement("#cd_helpdesk_submit", 1000, null, "Criar Ticket","value");
-
+document.getElementById("cd_helpdesk").addEventListener("click", function() {waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");});
+document.getElementById("cd_chat").addEventListener("click", function() {waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");});
 </script>
 <!-- End of ClickDesk -->
     <script type="text/javascript" src="js/jquery.js"></script>
