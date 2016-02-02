@@ -205,10 +205,11 @@ var glcspt = document.createElement('script'); glcspt.type = 'text/javascript';
 glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
 var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
 
-function waitForElement(selector, time, index, content, element) {
+function waitForElement(selector, time, index, content, element, callback) {
 	var i = index == null? 0: index;
         if(document.querySelectorAll(selector).length!==0) {
 	    document.querySelectorAll(selector)[i][element]=content;
+		if(callback) callback();
             return;
         }
         else {
@@ -222,8 +223,15 @@ waitForElement("#cd_prechat_button", 1000, null, "Iniciar Chat","value");
 waitForElement(".cdw-chat-popup-white-label", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito","innerText");
 waitForElement("#cd_agent_image", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito","title");
 waitForElement("#cd_helpdesk_submit", 1000, null, "Criar Ticket","value");
+
+waitForElement("#cd_helpdesk", 1000, null, "Criar Ticket","title", "calldesk");
+waitForElement("#cd_chat", 1000, null, "Criar Ticket","title", "callchat");
+function calldesk(){
 document.getElementById("cd_helpdesk").addEventListener("click", function() {waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");});
+}
+function callchat(){
 document.getElementById("cd_chat").addEventListener("click", function() {waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");});
+}
 </script>
 <!-- End of ClickDesk -->
     <script type="text/javascript" src="js/jquery.js"></script>
