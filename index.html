@@ -205,18 +205,19 @@ var glcspt = document.createElement('script'); glcspt.type = 'text/javascript';
 glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
 var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
 
-function waitForElement(selector, time, content) {
-        if(document.querySelectorAll(selector)!=null) {
-	    document.querySelectorAll(selector).innerText=content;
+function waitForElement(selector, time, index, content) {
+	var i = index == null? 0: index;
+        if(document.querySelectorAll(selector).length!==0) {
+	    document.querySelectorAll(selector)[i].innerText=content;
             return;
         }
         else {
             setTimeout(function() {
-                waitForElementToDisplay(selector, time);
+                waitForElement(selector, time, index, content);
             }, time);
         }
     }
-waitForElement("#cd_agent_name", 1000, "Quer Ajuda?");
+waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?");
 
 </script>
 <!-- End of ClickDesk -->
