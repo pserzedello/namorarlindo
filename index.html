@@ -226,10 +226,10 @@ waitForElement("#cd_helpdesk_submit", 1000, null, "Criar Ticket","value");
 
 waitForElement("#cd_helpdesk", 1000, null, "Criar Ticket","title", "calldesk");
 waitForElement("#cd_chat", 1000, null, "Criar Ticket","title", "callchat");
-function calldesk(){
+var calldesk = function(){
 document.getElementById("cd_helpdesk").addEventListener("click", function() {waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");});
 }
-function callchat(){
+var callchat = function(){
 document.getElementById("cd_chat").addEventListener("click", function() {waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");});
 }
 </script>
