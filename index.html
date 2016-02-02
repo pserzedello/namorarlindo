@@ -189,7 +189,7 @@ xmlhttp.onreadystatechange=function(){
 		document.getElementById("features").getElementsByClassName("single-features")[1].getElementsByTagName("p")[0].innerText=jsondata[s][0];
 		document.getElementById("features").getElementsByClassName("single-features")[2].getElementsByTagName("p")[0].innerText=jsondata[t][0];
   }
-  else{alert("Ocorreu um erro durante a requisição das mensagens");}
+  else{window.location.reload();}
  }
 }
 xmlhttp.open("GET", "json/amor.json", true);
@@ -221,8 +221,6 @@ waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");
 waitForElement("#cd_prechat_button", 1000, null, "Iniciar Chat","value");
 waitForElement(".cdw-chat-popup-white-label", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito","innerText");
 waitForElement("#cd_agent_image", 1000, null, "Namorar é Lindo, Ser Fiel é Perfeito","title");
-
-
 
 </script>
 <!-- End of ClickDesk -->
