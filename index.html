@@ -226,7 +226,7 @@ waitForElement("#cd_helpdesk_submit", 1000, null, "Criar Ticket","value");
 
 waitForElement("#cd_helpdesk", 1000, null, "Criar Ticket","title", "calldesk");
 waitForElement("#cd_chat", 1000, null, "Criar Ticket","title", "callchat");
-function calldesk(){
+function calldesk(){console.log("loaded");
 document.getElementById("cd_helpdesk").addEventListener("click", function() {waitForElement("#cd_agent_name", 1000, null, "Quer Ajuda?","innerText");});
 }
 function callchat(){
