@@ -209,7 +209,7 @@ function waitForElement(selector, time, index, content, element, callback) {
 	var i = index == null? 0: index;
         if(document.querySelectorAll(selector).length!==0) {
 	    document.querySelectorAll(selector)[i][element]=content;
-		if(callback)  window["callback"]();
+		if(callback)  window[callback]();
             return;
         }
         else {
